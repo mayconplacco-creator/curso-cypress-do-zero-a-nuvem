@@ -1,13 +1,10 @@
-const { defineConfig } = require('cypress')
+const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  viewportWidth: 1280,
-  viewportHeight: 880,
+  projectId: "spi8wd",
 
   e2e: {
-    video: true,
-    setupNodeEvents(on, config) {
-      // eventos podem ser configurados aqui no futuro
-    },
+    specPattern: "cypress/e2e/**/*.cy.js",
+    supportFile: "cypress/support/e2e.js",
   },
-})
+});
