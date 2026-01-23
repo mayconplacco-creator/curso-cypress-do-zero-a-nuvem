@@ -1,7 +1,6 @@
 name: End-to-end tests
 
-on:
-  push:
+on: push
 
 jobs:
   cypress-run:
@@ -13,5 +12,7 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
-          spec: cypress/e2e/CAC-TAT.cy.js
+          command: npm run test:cloud
